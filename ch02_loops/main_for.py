@@ -8,7 +8,7 @@ for 반복문 :
 3
 ...
 10
-출력한s for문 작성
+출력한 for문 작성
 '''
 for i in range(10):
     print(i+1)
