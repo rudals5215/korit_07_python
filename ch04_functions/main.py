@@ -76,6 +76,7 @@ def call3() :
     print('[ x | o ]')
     return 1
 
+# 매개변수 o / 리턴 o
 def call4(unknown1,unknown2) :
     print('[ o | o ]')
     return unknown1 + unknown2
