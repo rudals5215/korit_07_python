@@ -187,3 +187,55 @@ student1.set_age(20)
 student1.set_score(4.5)
 print(student1.get_info())
 print(f'{student1.get_name()}학생의 나이는 {student1.get_age()}살로, 파이썬 과목의 점수는 {student1.get_score()}점 입니다.')
+
+'''
+그렇다면 Java를 기준으로 봤을 때 setter 내부에는 비지니스 로직이 들어갈 수 있었습니다.
+
+완전 동일하게 할 겁니다.
+
+set_age()의 경우에 내부 로직으로 0살 미만과 200살 초과의 나이는 입력이 불가능하게씀 하겠습니다.
+
+set_score의 경우에도 0.0미만과 4.5초과는 입력이 불가능 하게끔 비지니스 로직을 작성하세요.
+
+여기서 생기는 의문점은 그겁니다. -> 아니 매개변수 생성자를 통해서 생성했는데 객체 생성 시점에 -102살 입력하면 되는거 아니냐 할 수 있는데 추후 설명하겠습니다.
+'''
+class Student2 :
+    def set_name(self, name) :
+        self.name = name
+
+    def get_name(self) :
+        return self.name
+
+    def set_age(self, age) :
+        if age < 0 or age > 200 :
+            print('0살 미만과 200살 초과의 나이는 입력이 불가능합니다.')
+            return      # 메서드에 return하고 비워두면 메서드 종료라는 의미
+        self.age = age
+
+    def get_age(self) :
+        return self.age
+
+    def set_address(self, address) :
+        self.address = address
+
+    def get_address(self) :
+        return self.address
+
+    def set_score(self, score) :
+        if score < 0.0 or score > 4.5 :
+            print('0.0미만과 4.5초과는 입력이 불가능합니다.')
+        else :
+            self.score = score
+
+    def get_score(self) :
+        return self.score
+
+    def get_info(self) :
+        return f'{self.name}학생의 나이는 {self.age}살로, 파이썬 과목의 점수는 {self.score}점 입니다.'
+
+student2 = Student2()
+student2.set_name('김일')
+student2.set_age(20)
+student2.set_score(4.5)
+print(student2.get_info())
+print(f'{student2.get_name()}학생의 나이는 {student2.get_age()}살로, 파이썬 과목의 점수는 {student2.get_score()}점 입니다.')
