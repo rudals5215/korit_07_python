@@ -1,6 +1,6 @@
 import random
 from hangman_arts import *  # hangman_arts 파일의 전체 데이터를 가지고 온다는 의미
-from hangman_word_list import *
+from hangman_word_list import word_list
 
 def play_hangman():
     print(logo)
